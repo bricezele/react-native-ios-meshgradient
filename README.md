@@ -94,6 +94,10 @@ const styles = StyleSheet.create({
 
 This example creates a 3x3 mesh gradient that fills the entire screen.
 
+## Demo
+
+<img width="774" alt="Screenshot 2024-06-25 at 19 31 44" src="https://github.com/bricezele/react-native-ios-meshgradient/assets/14944418/51e61fca-1e07-40e1-8a75-8971c9f63098">
+
 ## Notes
 - This component is only available for iOS 18+
 - The `points` array should contain normalized coordinates representing the position of each color in the gradient mesh.
