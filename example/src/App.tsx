@@ -1,12 +1,44 @@
-import * as React from 'react';
+import React from 'react';
 
-import { StyleSheet, View } from 'react-native';
-import { IosMeshgradientView } from 'react-native-ios-meshgradient';
+import { StyleSheet, useWindowDimensions, View } from 'react-native';
+import { MeshGradientView } from 'react-native-ios-meshgradient';
 
-export default function App() {
+export default function App(): React.JSX.Element {
+  const { width, height } = useWindowDimensions();
+
+  const points = [
+    [0, 0],
+    [0.5, 0],
+    [1, 0],
+    [0, 0.5],
+    [0.5, 0.5],
+    [1, 0.5],
+    [0, 1],
+    [0.5, 1],
+    [1, 1],
+  ];
+
+  const colors = [
+    '#FFFF00',
+    '#800080',
+    '#4B0082',
+    '#FFA500',
+    '#FF0000',
+    '#0000FF',
+    '#4B0082',
+    '#008000',
+    '#00FFFF',
+  ];
+
   return (
     <View style={styles.container}>
-      <IosMeshgradientView color="#32a852" style={styles.box} />
+      <MeshGradientView
+        width={3}
+        height={3}
+        points={points}
+        colors={colors}
+        style={{ width, height }}
+      />
     </View>
   );
 }
@@ -16,10 +48,5 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  box: {
-    width: 60,
-    height: 60,
-    marginVertical: 20,
   },
 });
